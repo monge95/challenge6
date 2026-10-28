@@ -1,17 +1,29 @@
 import SwiftUI
-import Playgrounds
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Text("Bem vindo ao restaurante!")
+            List {
+                ForEach(Pratos.allCases, id: \.self) { prato in
+                    Button {
+                        print(prato.rawValue)
+                    } label: {
+                        Text(prato.rawValue)
+                    }
+                }
+            }
+        }
     }
+}
+
+enum Pratos: String, CaseIterable {
+    case marmita = "Marmita"
+    case carne_panela = "Carne de Panela"
+    case escondidinho = "Escondidinho"
+    case feijao_farofa = "Feijão com Farofa"
 }
 
 #Preview {
     ContentView()
-}
-
-#Playground {
-    _ = 1 + 2
 }
