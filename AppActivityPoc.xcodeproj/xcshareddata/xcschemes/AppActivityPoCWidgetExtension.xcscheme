@@ -29,8 +29,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "000000000000000100000000"
-               BuildableName = "AppActivityPoc.app"
+               BlueprintIdentifier = "607785493092889700CA325E"
+               BuildableName = "AppActivityPocClip.app"
                ReferencedContainer = "container:AppActivityPoc.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -60,8 +60,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "000000000000000100000000"
-            BuildableName = "AppActivityPoc.app"
+            BlueprintIdentifier = "607785493092889700CA325E"
+            BuildableName = "AppActivityPocClip.app"
             ReferencedContainer = "container:AppActivityPoc.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -95,8 +95,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "000000000000000100000000"
-            BuildableName = "AppActivityPoc.app"
+            BlueprintIdentifier = "607785493092889700CA325E"
+            BuildableName = "AppActivityPocClip.app"
             ReferencedContainer = "container:AppActivityPoc.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

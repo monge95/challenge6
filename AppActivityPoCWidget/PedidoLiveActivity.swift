@@ -49,33 +49,3 @@ func textoDoEstado(_ estado: StateRequest) -> String {
     }
 }
 
-#Preview(
-    "Order preparing",
-    as: .content,
-    using: PedidoAttributes(
-        table: 3,
-        orderTime: Date()
-    ),
-    widget: {
-        PedidoLiveActivity()
-    },
-    contentStates: {
-        PedidoAttributes.ContentState(
-            state: .preparando,
-            time: Date().addingTimeInterval(1800),
-            texRequest: "Preparing your order"
-        )
-
-        PedidoAttributes.ContentState(
-            state: .aCaminho,
-            time: Date().addingTimeInterval(900),
-            texRequest: "Your order is on the way"
-        )
-
-        PedidoAttributes.ContentState(
-            state: .entregue,
-            time: Date(),
-            texRequest: "Order delivered"
-        )
-    }
-)
