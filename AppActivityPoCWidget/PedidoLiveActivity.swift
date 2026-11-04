@@ -17,24 +17,25 @@ struct PedidoLiveActivity: Widget {
                     .font(.headline)
                     .foregroundStyle(.primary)
                 Text(textoDoEstado(context.state.state))
-                    .foregroundStyle(.primary)
-                Text("Entrega às \(context.state.time, style: .time)")
-                    .foregroundStyle(.secondary)
+                Text("Previsão de Entrega às \(context.state.time, style: .time)")
             }
             .padding()
             .activityBackgroundTint(Color(uiColor: .secondarySystemBackground))
             .activitySystemActionForegroundColor(Color.primary)
         } dynamicIsland: { context in
-            DynamicIsland {
+            DynamicIsland{
                 DynamicIslandExpandedRegion(.leading) {
                         Text("Mesa \(context.attributes.table)")
+                        .padding(.leading, 10)
+                        
+                  
                 }
                 DynamicIslandExpandedRegion(.trailing) {
                     Text(context.state.time, style: .time)
                 }
                 DynamicIslandExpandedRegion(.bottom) {
                     ComponentLoad(load: context.state.load)
-                                          .padding()
+                        .padding(.horizontal, )
                 }
             } compactLeading: {
                 

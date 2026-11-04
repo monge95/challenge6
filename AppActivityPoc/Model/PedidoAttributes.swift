@@ -34,8 +34,8 @@ struct PedidoAttributes: ActivityAttributes{
 
 func textoDoEstado(_ estado: StateRequest) -> String {
     switch estado {
-    case .preparando: return "Seu pedido está sendo preparado 👨‍🍳"
-    case .aCaminho:   return "Seu pedido está a caminho 🛵"
-    case .entregue:   return "Pedido entregue! Bom apetite ✅"
+    case .preparando: return "Seu pedido está sendo preparado"
+    case .aCaminho:   return "Seu pedido está a caminho"
+    case .entregue:   return "Pedido entregue! Bom apetite"
     }
 }
