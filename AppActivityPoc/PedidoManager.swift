@@ -62,7 +62,14 @@ final class PedidoManager {
 
     func encerrar() async {
         progressTask?.cancel()
-        await activity?.end(nil, dismissalPolicy: .default)
+        progressTask = nil
+
+        // The manager may not hold the Activity instance if it was recreated,
+        // so end every live Pedido activity owned by this app.
+        for pedidoActivity in Activity<PedidoAttributes>.activities {
+            await pedidoActivity.end(nil, dismissalPolicy: .immediate)
+        }
+
         activity = nil
         load = 0
     }

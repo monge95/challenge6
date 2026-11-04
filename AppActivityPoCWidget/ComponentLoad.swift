@@ -12,43 +12,58 @@ struct ComponentLoad: View {
     var total: Int = 4
     var spacing: CGFloat = 6
     var diameter: CGFloat = 10
-    var text: [String] = ["to lendo","preparando","ta quase", "chegou"]
+    var text: [String] = [
+        "confirmando", "preparando", "entregando", "entregue",
+    ]
+
     var body: some View {
-        VStack{
-            HStack(spacing: spacing) {
-            ForEach(0..<total, id: \.self) { index in
-                    let isActive = load > index
-                    
-                    Circle()
-                        .fill(isActive ? .blue : Color.primary.opacity(0.2))
-                        .frame(width: diameter, height: diameter)
-                    
-                    if (index < total - 1 ){
+        VStack(spacing: 8) {
+            GeometryReader { geometry in
+                let stepCount = min(total, text.count)
+                let stepWidth = geometry.size.width / CGFloat(max(stepCount, 1))
+                let lineWidth = max(0, stepWidth - diameter)
+
+                ZStack(alignment: .topLeading) {
+                    ForEach(0..<max(stepCount - 1, 0), id: \.self) { index in
+                        let startX = CGFloat(index) * stepWidth + stepWidth / 2 + diameter / 2
+                        let isConnected = load > index + 1
+
                         Capsule()
                             .fill(Color.primary.opacity(0.2))
-                            .frame(height: 2)
+                            .frame(width: lineWidth, height: 2)
                             .overlay(alignment: .leading) {
                                 Capsule()
                                     .fill(.blue)
-                                    .frame(width: load > index + 1 ? nil : 0)
+                                    .frame(width: isConnected ? lineWidth : 0, height: 2)
                             }
+                            .position(x: startX + lineWidth / 2, y: diameter / 2)
+                    }
+
+                    HStack(spacing: 0) {
+                        ForEach(0..<stepCount, id: \.self) { index in
+                            Circle()
+                                .fill(load > index ? .blue : Color.primary.opacity(0.2))
+                                .frame(width: diameter, height: diameter)
+                                .frame(width: stepWidth)
+                        }
                     }
                 }
             }
+            .frame(height: diameter)
             .animation(.easeInOut(duration: 0.4), value: load)
-            .padding(.horizontal, 20)
-            
-            HStack(spacing: 20){
-            ForEach(text, id: \.self) { texto in
-                    Text(texto)
-                    .font(.system(size: 15))
+
+            HStack(spacing: 0) {
+                ForEach(Array(text.prefix(total).enumerated()), id: \.offset) { _, label in
+                    Text(label)
+                        .font(.system(size: 13))
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.75)
+                        .frame(maxWidth: .infinity)
                 }
             }
         }
-       
     }
 }
 #Preview {
     ComponentLoad(load: 1, diameter: 10)
 }
-
