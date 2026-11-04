@@ -5,6 +5,7 @@ struct ContentView: View {
 
     @State private var activity: Activity<PedidoAttributes>?
     @State var searchText: String = ""
+    @State private var manager = PedidoManager()
 
     var body: some View {
         VStack {
@@ -37,42 +38,18 @@ struct ContentView: View {
 //            }
             
             
-            Button("fazer pedido") {
-                guard ActivityAuthorizationInfo().areActivitiesEnabled else { return }
-
-                let attributes = PedidoAttributes(
-                    table: 3,
-                    orderTime: Date()
-                )
-
-                let startState = PedidoAttributes.ContentState(
-                    state: .preparando,
-                    time: Calendar.current.date(byAdding: .minute, value: 50, to: Date()) ?? Date(),
-                    texRequest: "Seu pedido está sendo processado"
-                )
-
-                do {
-                    activity = try Activity.request(
-                        attributes: attributes,
-                        content: ActivityContent(state: startState, staleDate: nil)
-                    )
-                    print("Atividade iniciada: \(activity?.id ?? "?")")
-                } catch {
-                    print("Erro ao iniciar: \(error)")
-                }
+         
+            Button("Fazer pedido") {
+                manager.iniciarPedido(mesa: 3)
             }
-            .padding()
-            
-            Button("parar pedido") {
-                guard ActivityAuthorizationInfo().areActivitiesEnabled else { return }
-                
-                for atual in Activity<PedidoAttributes>.activities {
-                    Task { await atual.end(dismissalPolicy: .immediate) }
-                }
+            .buttonStyle(.borderedProminent)
+
+            Button("Cancelar") {
+                Task { await manager.encerrar() }
             }
-//            Spacer()
+            .buttonStyle(.bordered)
+            .disabled(manager.load == 0)
         }
-        .padding()
     }
 }
 

@@ -16,14 +16,26 @@ enum StateRequest: Codable, Hashable {
 
 struct PedidoAttributes: ActivityAttributes{
     
-    let table: Int
-    let orderTime: Date
     
     struct ContentState: Codable & Hashable{
         
         var state: StateRequest
         var time: Date
         var texRequest: String
+        var load: Int
         
+    }
+    
+    let table: Int
+    let orderTime: Date
+    
+}
+
+
+func textoDoEstado(_ estado: StateRequest) -> String {
+    switch estado {
+    case .preparando: return "Seu pedido está sendo preparado 👨‍🍳"
+    case .aCaminho:   return "Seu pedido está a caminho 🛵"
+    case .entregue:   return "Pedido entregue! Bom apetite ✅"
     }
 }

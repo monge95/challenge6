@@ -12,7 +12,7 @@ struct PedidoLiveActivity: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: PedidoAttributes.self) { context in
           
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .trailing, spacing: 8) {
                 Text("Mesa \(context.attributes.table)")
                     .font(.headline)
                 Text(textoDoEstado(context.state.state))
@@ -22,16 +22,19 @@ struct PedidoLiveActivity: Widget {
         } dynamicIsland: { context in
             DynamicIsland {
                 DynamicIslandExpandedRegion(.leading) {
-                    Text("Mesa \(context.attributes.table)")
-                }
-                DynamicIslandExpandedRegion(.center) {
-                    Text(textoDoEstado(context.state.state))
+                        Text("Mesa \(context.attributes.table)")
+                        
+                  
                 }
                 DynamicIslandExpandedRegion(.trailing) {
                     Text(context.state.time, style: .time)
                 }
+                DynamicIslandExpandedRegion(.bottom) {
+                    ComponentLoad(load: context.state.load)
+                                          .padding(.top, 4)
+                }
             } compactLeading: {
-                Image(systemName: "fork.knife")
+                
             } compactTrailing: {
                 Text(context.state.time, style: .timer)
             } minimal: {
@@ -41,11 +44,5 @@ struct PedidoLiveActivity: Widget {
     }
 }
 
-func textoDoEstado(_ estado: StateRequest) -> String {
-    switch estado {
-    case .preparando: return "Seu pedido está sendo preparado 👨‍🍳"
-    case .aCaminho:   return "Seu pedido está a caminho 🛵"
-    case .entregue:   return "Pedido entregue! Bom apetite ✅"
-    }
-}
+
 
