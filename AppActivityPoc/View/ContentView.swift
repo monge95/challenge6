@@ -79,7 +79,7 @@ struct ContentView: View {
         }
         .background(Color(.systemBackground))
         .sheet(isPresented: $showCarrinho) {
-            CarrinhoSheet(carrinho: $carrinho)
+            CarrinhoSheet(carrinho: $carrinho, mesaNumber: mesaNumber)
         }
     }
 }

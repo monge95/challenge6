@@ -14,6 +14,8 @@ struct CarrinhoSheet: View {
     @Binding var carrinho: [Pratos: Int]
 
     @State var manager = PedidoManager()
+    
+    var mesaNumber: Int? = nil
 
     var body: some View {
         NavigationView {
@@ -59,7 +61,7 @@ struct CarrinhoSheet: View {
                     }
                 }
                 Button {
-                    manager.iniciarPedido(mesa: 3)
+                    manager.iniciarPedido(mesa: mesaNumber ?? 0)
                 } label: {
                     Spacer()
                     Text("Fazer pedido")
