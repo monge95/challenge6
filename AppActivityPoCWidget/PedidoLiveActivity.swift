@@ -15,10 +15,15 @@ struct PedidoLiveActivity: Widget {
             VStack(alignment: .leading, spacing: 8) {
                 Text("Mesa \(context.attributes.table)")
                     .font(.headline)
+                    .foregroundStyle(.primary)
                 Text(textoDoEstado(context.state.state))
+                    .foregroundStyle(.primary)
                 Text("Entrega às \(context.state.time, style: .time)")
+                    .foregroundStyle(.secondary)
             }
             .padding()
+            .activityBackgroundTint(Color(uiColor: .secondarySystemBackground))
+            .activitySystemActionForegroundColor(Color.primary)
         } dynamicIsland: { context in
             DynamicIsland {
                 DynamicIslandExpandedRegion(.leading) {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "2710"
+   LastUpgradeVersion = "2720"
    wasCreatedForAppExtension = "YES"
    version = "2.0">
    <BuildAction
@@ -17,7 +17,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607D394F3093C37F000DBFFD"
-               BuildableName = "AppActivityPoCWidgetExtension.appex"
+               BuildableName = "AppActivityPoCClipWidgetExtension.appex"
+               BlueprintName = "AppActivityPoCClipWidgetExtension"
                ReferencedContainer = "container:AppActivityPoc.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
