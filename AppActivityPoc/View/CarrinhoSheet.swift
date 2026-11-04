@@ -11,6 +11,8 @@ struct CarrinhoSheet: View {
     
     @Binding var carrinho: [Pratos: Int]
     
+    @State var manager = PedidoManager()
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -48,15 +50,11 @@ struct CarrinhoSheet: View {
                     }
                 }
                 Button("fazer pedido") {
-                    do {
-                        try ActivityManager.shared.startPedido(table: 2)
-                    } catch {
-                        print(error.localizedDescription)
-                    }
+                    manager.iniciarPedido(mesa: 3)
                 }
                 Button("Remover pedidos") {
                     Task {
-                        await ActivityManager.shared.endAllPedidos()
+                        await manager.encerrar()
                     }
                 }
             }

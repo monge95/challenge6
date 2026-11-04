@@ -84,9 +84,9 @@
 		6077855D309288C400CA325E /* Exceptions for "AppActivityPoc" folder in "AppActivityPocClip" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				ActivityManager.swift,
 				Model/PedidoAttributes.swift,
 				Model/Pratos.swift,
+				PedidoManager.swift,
 				Resources/ActivityAppPoCIcon.icon,
 				View/CarrinhoSheet.swift,
 				View/ContentView.swift,
@@ -127,20 +127,6 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
-			);
-			target = A1000000000000000000000A /* AppActivityPoCAppWidgetExtension */;
-		};
-		BAFF1D0E309A78C2000F2FC6 /* Exceptions for "AppActivityPoc" folder in "AppActivityPoCWidgetExtension" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				ComponentLoad.swift,
-			);
-			target = 607D394F3093C37F000DBFFD /* AppActivityPoCWidgetExtension */;
-		};
-		BAFF1D0F309A78C2000F2FC6 /* Exceptions for "AppActivityPoc" folder in "AppActivityPoCAppWidgetExtension" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				ComponentLoad.swift,
 			);
 			target = A1000000000000000000000A /* AppActivityPoCAppWidgetExtension */;
 		};
@@ -560,7 +546,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H35GUXPUPQ;
+				DEVELOPMENT_TEAM = 5PRN865UP6;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -608,7 +594,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H35GUXPUPQ;
+				DEVELOPMENT_TEAM = 5PRN865UP6;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -658,7 +644,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H35GUXPUPQ;
+				DEVELOPMENT_TEAM = 5PRN865UP6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppActivityPocClip/Info.plist;
@@ -703,7 +689,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H35GUXPUPQ;
+				DEVELOPMENT_TEAM = 5PRN865UP6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppActivityPocClip/Info.plist;
@@ -748,7 +734,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H35GUXPUPQ;
+				DEVELOPMENT_TEAM = 5PRN865UP6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppActivityPoCWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = AppActivityPoCClipWidget;
@@ -785,7 +771,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H35GUXPUPQ;
+				DEVELOPMENT_TEAM = 5PRN865UP6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppActivityPoCWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = AppActivityPoCClipWidget;
@@ -820,7 +806,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H35GUXPUPQ;
+				DEVELOPMENT_TEAM = 5PRN865UP6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppActivityPoCWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = AppActivityPoCWidget;
@@ -841,7 +827,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H35GUXPUPQ;
+				DEVELOPMENT_TEAM = 5PRN865UP6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppActivityPoCWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = AppActivityPoCWidget;
