@@ -90,6 +90,7 @@
 				Resources/ActivityAppPoCIcon.icon,
 				View/CarrinhoSheet.swift,
 				View/ContentView.swift,
+				View/CutRoundedRectangle.swift,
 				View/PratoComponent.swift,
 			);
 			target = 607785493092889700CA325E /* AppActivityPocClip */;

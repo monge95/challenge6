@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CarrinhoSheet: View {
+    
+    @Environment(\.dismiss) private var dismiss
 
     @Binding var carrinho: [Pratos: Int]
 
@@ -56,16 +58,48 @@ struct CarrinhoSheet: View {
                         }
                     }
                 }
-                Button("Fazer pedido") {
+                Button {
                     manager.iniciarPedido(mesa: 3)
+                } label: {
+                    Spacer()
+                    Text("Fazer pedido")
+                    Spacer()
                 }
-                Button("Remover pedidos") {
+                .padding()
+                .glassEffect(.regular.interactive())
+                .padding(.horizontal)
+                
+                Button {
                     Task {
                         await manager.encerrar()
                     }
+                } label: {
+                    Spacer()
+                    Text("Remover pedido")
+                    Spacer()
+                }
+                .padding()
+                .glassEffect(.regular.interactive())
+                .padding(.horizontal)
+            }
+            .navigationTitle("Seu Pedido")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "xmark")
+                    }
                 }
             }
-            .navigationTitle("Carrinho")
         }
     }
+}
+
+#Preview {
+    CarrinhoSheet(carrinho: .constant([:]))
+        .sheet(isPresented: .constant(true)) {
+            CarrinhoSheet(carrinho: .constant([:]))
+        }
 }
