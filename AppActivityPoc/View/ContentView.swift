@@ -32,9 +32,9 @@ struct ContentView: View {
                     }
 
                     Spacer()
-
+#if APPCLIP
                     Button {
-                        showCarrinho.toggle()
+                            showCarrinho.toggle()
                     } label: {
                         Image(systemName: "cart.fill")
                             .font(.title2)
@@ -43,7 +43,7 @@ struct ContentView: View {
                             .background(.quaternary, in: Circle())
                     }
                     .buttonStyle(.plain)
-                    .accessibilityLabel("Abrir carrinho")
+#endif
                 }
 
                 HStack(spacing: 10) {

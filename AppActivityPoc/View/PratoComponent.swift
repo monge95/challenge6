@@ -15,17 +15,18 @@ struct PratoComponent: View {
                             .foregroundStyle(.primary)
                             .lineLimit(2)
                             .frame(maxWidth: .infinity, alignment: .leading)
-
-                        Button(action: onAdicionar) {
-                            Image(systemName: "plus")
-                                .font(.headline.weight(.medium))
-                                .foregroundStyle(.white)
-                                .padding(8)
-                                .background(.gray, in: Circle())
-                                .contentShape(Circle())
-                        }
-                        .buttonStyle(.plain)
-                        .frame(minWidth: 44, minHeight: 44)
+                        #if APPCLIP
+                            Button(action: onAdicionar) {
+                                Image(systemName: "plus")
+                                    .font(.headline.weight(.medium))
+                                    .foregroundStyle(.white)
+                                    .padding(8)
+                                    .background(.gray, in: Circle())
+                                    .contentShape(Circle())
+                            }
+                            .buttonStyle(.plain)
+                            .frame(minWidth: 44, minHeight: 44)
+                        #endif
                     }
                     .padding(12)
                     .background(
