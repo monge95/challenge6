@@ -36,10 +36,12 @@ struct ComponentLoad: View {
                 }
             }
             .animation(.easeInOut(duration: 0.4), value: load)
+            .padding(.horizontal, 20)
             
             HStack(spacing: 20){
             ForEach(text, id: \.self) { texto in
                     Text(texto)
+                    .font(.system(size: 15))
                 }
             }
         }

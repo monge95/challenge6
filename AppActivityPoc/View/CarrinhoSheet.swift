@@ -8,20 +8,24 @@
 import SwiftUI
 
 struct CarrinhoSheet: View {
-    
+
     @Binding var carrinho: [Pratos: Int]
-    
+
     @State var manager = PedidoManager()
-    
+
     var body: some View {
         NavigationView {
             VStack {
-                let pratosNoCarrinho = carrinho
+                let pratosNoCarrinho =
+                    carrinho
                     .filter { $0.value > 0 }
                     .sorted { $0.value > $1.value }
 
                 if pratosNoCarrinho.isEmpty {
-                    ContentUnavailableView("Nenhum prato no carrinho", systemImage: "cart")
+                    ContentUnavailableView(
+                        "Nenhum prato no carrinho",
+                        systemImage: "cart"
+                    )
                 } else {
                     List {
                         ForEach(pratosNoCarrinho, id: \.key) { key, value in
@@ -30,7 +34,10 @@ struct CarrinhoSheet: View {
                                 Spacer()
                                 HStack {
                                     Button {
-                                        carrinho[key, default: 0] = max(0, value - 1)
+                                        carrinho[key, default: 0] = max(
+                                            0,
+                                            value - 1
+                                        )
                                     } label: {
                                         Image(systemName: "minus.circle")
                                     }
@@ -49,7 +56,7 @@ struct CarrinhoSheet: View {
                         }
                     }
                 }
-                Button("fazer pedido") {
+                Button("Fazer pedido") {
                     manager.iniciarPedido(mesa: 3)
                 }
                 Button("Remover pedidos") {

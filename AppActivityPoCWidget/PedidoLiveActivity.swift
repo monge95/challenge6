@@ -28,15 +28,13 @@ struct PedidoLiveActivity: Widget {
             DynamicIsland {
                 DynamicIslandExpandedRegion(.leading) {
                         Text("Mesa \(context.attributes.table)")
-                        
-                  
                 }
                 DynamicIslandExpandedRegion(.trailing) {
                     Text(context.state.time, style: .time)
                 }
                 DynamicIslandExpandedRegion(.bottom) {
                     ComponentLoad(load: context.state.load)
-                                          .padding(.top, 4)
+                                          .padding()
                 }
             } compactLeading: {
                 

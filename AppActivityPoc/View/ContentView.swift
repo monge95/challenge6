@@ -13,7 +13,7 @@ struct ContentView: View {
     ]
 
     @State var showCarrinho: Bool = false
-    
+
     var mesaNumber: Int? = nil
 
     var body: some View {
@@ -24,8 +24,11 @@ struct ContentView: View {
                         Text("Restaurante")
                             .font(.largeTitle.bold())
 
-                        Text(mesaNumber.map { "Mesa \($0)" } ?? "Top 10 restaurantes")
-                            .font(.title3)
+                        Text(
+                            mesaNumber.map { "Mesa \($0)" }
+                                ?? "Top 10 restaurantes"
+                        )
+                        .font(.title3)
                     }
 
                     Spacer()
