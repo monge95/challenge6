@@ -5,7 +5,7 @@ import WidgetKit
 // This file belongs only to the full app's widget extension.
 // Sharing the preview declaration with the Clip makes its host ambiguous.
 #Preview(
-    "Pedido",
+    "Pedido Compacto",
     as: .dynamicIsland(.compact),
     using: PedidoAttributes(table: 3, orderTime: .now)
 ) {
@@ -30,7 +30,7 @@ import WidgetKit
 }
 
 #Preview(
-    "Pedido",
+    "Pedido Expandido",
     as: .dynamicIsland(.expanded),
     using: PedidoAttributes(table: 3, orderTime: .now)
 ) {
@@ -55,7 +55,7 @@ import WidgetKit
 }
 
 #Preview(
-    "Pedido",
+    "Pedido Minimo",
     as: .dynamicIsland(.minimal),
     using: PedidoAttributes(table: 3, orderTime: .now)
 ) {

@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		607785563092889900CA325E /* AppActivityPocClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 6077854A3092889700CA325E /* AppActivityPocClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		607D39533093C37F000DBFFD /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607D39523093C37F000DBFFD /* WidgetKit.framework */; };
-		607D39783093DCDA000DBFFD /* AppActivityPoCWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 607D39503093C37F000DBFFD /* AppActivityPoCWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		A00000000000000000000001 /* AppActivityPoCAppWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A00000000000000000000005 /* AppActivityPoCAppWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		A00000000000000000000002 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607D39523093C37F000DBFFD /* WidgetKit.framework */; };
+		607D39783093DCDA000DBFFD /* AppActivityPoCClipWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 607D39503093C37F000DBFFD /* AppActivityPoCClipWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B00000000000000000000001 /* AppActivityPoCAppWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B00000000000000000000004 /* AppActivityPoCAppWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +27,7 @@
 			remoteGlobalIDString = 607D394F3093C37F000DBFFD;
 			remoteInfo = AppActivityPoCWidgetExtension;
 		};
-		A00000000000000000000003 /* PBXContainerItemProxy */ = {
+		B00000000000000000000002 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000000000000000 /* Project object */;
 			proxyType = 1;
@@ -53,7 +51,7 @@
 			dstPath = "";
 			dstSubfolder = PlugIns;
 			files = (
-				607D39783093DCDA000DBFFD /* AppActivityPoCWidgetExtension.appex in Embed Foundation Extensions */,
+				607D39783093DCDA000DBFFD /* AppActivityPoCClipWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 		};
@@ -62,7 +60,7 @@
 			dstPath = "";
 			dstSubfolder = PlugIns;
 			files = (
-				A00000000000000000000001 /* AppActivityPoCAppWidgetExtension.appex in Embed Foundation Extensions */,
+				B00000000000000000000001 /* AppActivityPoCAppWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 		};
@@ -71,10 +69,8 @@
 /* Begin PBXFileReference section */
 		000000000000000000000120 /* AppActivityPoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppActivityPoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6077854A3092889700CA325E /* AppActivityPocClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppActivityPocClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		607D39503093C37F000DBFFD /* AppActivityPoCWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AppActivityPoCWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		607D39523093C37F000DBFFD /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
-		607D39763093CD42000DBFFD /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS27.1.sdk/System/Library/Frameworks/SwiftUI.framework; sourceTree = DEVELOPER_DIR; };
-		A00000000000000000000005 /* AppActivityPoCAppWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AppActivityPoCAppWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		607D39503093C37F000DBFFD /* AppActivityPoCClipWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AppActivityPoCClipWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B00000000000000000000004 /* AppActivityPoCAppWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AppActivityPoCAppWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -88,44 +84,46 @@
 		6077855D309288C400CA325E /* Exceptions for "AppActivityPoc" folder in "AppActivityPocClip" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				ActivityAppPoCIcon.icon,
-				ComponentLoad.swift,
-				ContentView.swift,
-				PedidoManager.swift,
-				PratoComponent.swift,
+				ActivityManager.swift,
+				Model/PedidoAttributes.swift,
+				Model/Pratos.swift,
+				Resources/ActivityAppPoCIcon.icon,
+				View/CarrinhoSheet.swift,
+				View/ContentView.swift,
+				View/PratoComponent.swift,
 			);
 			target = 607785493092889700CA325E /* AppActivityPocClip */;
 		};
-		607D39633093C380000DBFFD /* Exceptions for "AppActivityPoCWidget" folder in "AppActivityPoCWidgetExtension" target */ = {
+		607D39633093C380000DBFFD /* Exceptions for "AppActivityPoCWidget" folder in "AppActivityPoCClipWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 				PedidoLiveActivityPreviews.swift,
 			);
-			target = 607D394F3093C37F000DBFFD /* AppActivityPoCWidgetExtension */;
-		};
-		607D396D3093C3B4000DBFFD /* Exceptions for "AppActivityPoCWidget" folder in "AppActivityPocClip" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				PedidoAttributes.swift,
-			);
-			target = 607785493092889700CA325E /* AppActivityPocClip */;
+			target = 607D394F3093C37F000DBFFD /* AppActivityPoCClipWidgetExtension */;
 		};
 		607D396F3093C4BA000DBFFD /* Exceptions for "AppActivityPoc" folder in "AppActivityPoc" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Resources/Info.plist,
 			);
 			target = 000000000000000100000000 /* AppActivityPoc */;
 		};
-		607D39713093CBD9000DBFFD /* Exceptions for "AppActivityPoCWidget" folder in "AppActivityPoc" target */ = {
+		60A0037C309A739E005F63EA /* Exceptions for "AppActivityPoc" folder in "AppActivityPoCClipWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				PedidoAttributes.swift,
+				Model/PedidoAttributes.swift,
 			);
-			target = 000000000000000100000000 /* AppActivityPoc */;
+			target = 607D394F3093C37F000DBFFD /* AppActivityPoCClipWidgetExtension */;
 		};
-		A00000000000000000000006 /* Exceptions for "AppActivityPoCWidget" folder in "AppActivityPoCAppWidgetExtension" target */ = {
+		60A0037D309A739E005F63EA /* Exceptions for "AppActivityPoc" folder in "AppActivityPoCAppWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Model/PedidoAttributes.swift,
+			);
+			target = A1000000000000000000000A /* AppActivityPoCAppWidgetExtension */;
+		};
+		B00000000000000000000005 /* Exceptions for "AppActivityPoCWidget" folder in "AppActivityPoCAppWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -154,8 +152,8 @@
 			exceptions = (
 				607D396F3093C4BA000DBFFD /* Exceptions for "AppActivityPoc" folder in "AppActivityPoc" target */,
 				6077855D309288C400CA325E /* Exceptions for "AppActivityPoc" folder in "AppActivityPocClip" target */,
-				BAFF1D0E309A78C2000F2FC6 /* Exceptions for "AppActivityPoc" folder in "AppActivityPoCWidgetExtension" target */,
-				BAFF1D0F309A78C2000F2FC6 /* Exceptions for "AppActivityPoc" folder in "AppActivityPoCAppWidgetExtension" target */,
+				60A0037C309A739E005F63EA /* Exceptions for "AppActivityPoc" folder in "AppActivityPoCClipWidgetExtension" target */,
+				60A0037D309A739E005F63EA /* Exceptions for "AppActivityPoc" folder in "AppActivityPoCAppWidgetExtension" target */,
 			);
 			path = AppActivityPoc;
 			sourceTree = "<group>";
@@ -171,10 +169,8 @@
 		607D39563093C37F000DBFFD /* AppActivityPoCWidget */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				607D39713093CBD9000DBFFD /* Exceptions for "AppActivityPoCWidget" folder in "AppActivityPoc" target */,
-				607D396D3093C3B4000DBFFD /* Exceptions for "AppActivityPoCWidget" folder in "AppActivityPocClip" target */,
-				607D39633093C380000DBFFD /* Exceptions for "AppActivityPoCWidget" folder in "AppActivityPoCWidgetExtension" target */,
-				A00000000000000000000006 /* Exceptions for "AppActivityPoCWidget" folder in "AppActivityPoCAppWidgetExtension" target */,
+				607D39633093C380000DBFFD /* Exceptions for "AppActivityPoCWidget" folder in "AppActivityPoCClipWidgetExtension" target */,
+				B00000000000000000000005 /* Exceptions for "AppActivityPoCWidget" folder in "AppActivityPoCAppWidgetExtension" target */,
 			);
 			path = AppActivityPoCWidget;
 			sourceTree = "<group>";
@@ -195,13 +191,11 @@
 		607D394D3093C37F000DBFFD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
-				607D39533093C37F000DBFFD /* WidgetKit.framework in Frameworks */,
 			);
 		};
-		A00000000000000000000007 /* Frameworks */ = {
+		B00000000000000000000006 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
-				A00000000000000000000002 /* WidgetKit.framework in Frameworks */,
 			);
 		};
 /* End PBXFrameworksBuildPhase section */
@@ -213,7 +207,6 @@
 				000000000000000000000010 /* AppActivityPoc */,
 				6077854B3092889700CA325E /* AppActivityPocClip */,
 				607D39563093C37F000DBFFD /* AppActivityPoCWidget */,
-				607D39513093C37F000DBFFD /* Frameworks */,
 				000000000000000000000020 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -223,19 +216,10 @@
 			children = (
 				000000000000000000000120 /* AppActivityPoc.app */,
 				6077854A3092889700CA325E /* AppActivityPocClip.app */,
-				607D39503093C37F000DBFFD /* AppActivityPoCWidgetExtension.appex */,
-				A00000000000000000000005 /* AppActivityPoCAppWidgetExtension.appex */,
+				607D39503093C37F000DBFFD /* AppActivityPoCClipWidgetExtension.appex */,
+				B00000000000000000000004 /* AppActivityPoCAppWidgetExtension.appex */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		607D39513093C37F000DBFFD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				607D39763093CD42000DBFFD /* SwiftUI.framework */,
-				607D39523093C37F000DBFFD /* WidgetKit.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,7 +239,7 @@
 			);
 			dependencies = (
 				607785553092889900CA325E /* PBXTargetDependency */,
-				A1000000000000000000000B /* PBXTargetDependency */,
+				B0000000000000000000000A /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				000000000000000000000010 /* AppActivityPoc */,
@@ -287,9 +271,9 @@
 			productReference = 6077854A3092889700CA325E /* AppActivityPocClip.app */;
 			productType = "com.apple.product-type.application.on-demand-install-capable";
 		};
-		607D394F3093C37F000DBFFD /* AppActivityPoCWidgetExtension */ = {
+		607D394F3093C37F000DBFFD /* AppActivityPoCClipWidgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 607D39643093C380000DBFFD /* Build configuration list for PBXNativeTarget "AppActivityPoCWidgetExtension" */;
+			buildConfigurationList = 607D39643093C380000DBFFD /* Build configuration list for PBXNativeTarget "AppActivityPoCClipWidgetExtension" */;
 			buildPhases = (
 				607D394C3093C37F000DBFFD /* Sources */,
 				607D394D3093C37F000DBFFD /* Frameworks */,
@@ -300,18 +284,18 @@
 			fileSystemSynchronizedGroups = (
 				607D39563093C37F000DBFFD /* AppActivityPoCWidget */,
 			);
-			name = AppActivityPoCWidgetExtension;
+			name = AppActivityPoCClipWidgetExtension;
 			productName = AppActivityPoCWidgetExtension;
-			productReference = 607D39503093C37F000DBFFD /* AppActivityPoCWidgetExtension.appex */;
+			productReference = 607D39503093C37F000DBFFD /* AppActivityPoCClipWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		A1000000000000000000000A /* AppActivityPoCAppWidgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A1000000000000000000000E /* Build configuration list for PBXNativeTarget "AppActivityPoCAppWidgetExtension" */;
+			buildConfigurationList = B0000000000000000000000D /* Build configuration list for PBXNativeTarget "AppActivityPoCAppWidgetExtension" */;
 			buildPhases = (
-				A00000000000000000000009 /* Sources */,
-				A00000000000000000000007 /* Frameworks */,
-				A00000000000000000000008 /* Resources */,
+				B00000000000000000000008 /* Sources */,
+				B00000000000000000000006 /* Frameworks */,
+				B00000000000000000000007 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -320,7 +304,7 @@
 			);
 			name = AppActivityPoCAppWidgetExtension;
 			productName = AppActivityPoCAppWidgetExtension;
-			productReference = A00000000000000000000005 /* AppActivityPoCAppWidgetExtension.appex */;
+			productReference = B00000000000000000000004 /* AppActivityPoCAppWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -331,7 +315,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2710;
-				LastUpgradeCheck = 2710;
+				LastUpgradeCheck = 2720;
 				TargetAttributes = {
 					000000000000000100000000 = {
 						CreatedOnToolsVersion = 26.3;
@@ -363,7 +347,7 @@
 			targets = (
 				000000000000000100000000 /* AppActivityPoc */,
 				607785493092889700CA325E /* AppActivityPocClip */,
-				607D394F3093C37F000DBFFD /* AppActivityPoCWidgetExtension */,
+				607D394F3093C37F000DBFFD /* AppActivityPoCClipWidgetExtension */,
 				A1000000000000000000000A /* AppActivityPoCAppWidgetExtension */,
 			);
 		};
@@ -385,7 +369,7 @@
 			files = (
 			);
 		};
-		A00000000000000000000008 /* Resources */ = {
+		B00000000000000000000007 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
 			);
@@ -408,7 +392,7 @@
 			files = (
 			);
 		};
-		A00000000000000000000009 /* Sources */ = {
+		B00000000000000000000008 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			files = (
 			);
@@ -423,13 +407,13 @@
 		};
 		607D39613093C380000DBFFD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 607D394F3093C37F000DBFFD /* AppActivityPoCWidgetExtension */;
+			target = 607D394F3093C37F000DBFFD /* AppActivityPoCClipWidgetExtension */;
 			targetProxy = 607D39603093C380000DBFFD /* PBXContainerItemProxy */;
 		};
-		A1000000000000000000000B /* PBXTargetDependency */ = {
+		B0000000000000000000000A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A1000000000000000000000A /* AppActivityPoCAppWidgetExtension */;
-			targetProxy = A00000000000000000000003 /* PBXContainerItemProxy */;
+			targetProxy = B00000000000000000000002 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -578,10 +562,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H35GUXPUPQ;
 				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AppActivityPoc/Info.plist;
+				INFOPLIST_FILE = AppActivityPoc/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "App Acitivity Poc";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
@@ -625,10 +610,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H35GUXPUPQ;
 				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AppActivityPoc/Info.plist;
+				INFOPLIST_FILE = AppActivityPoc/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "App Acitivity Poc";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
@@ -697,6 +683,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG APPCLIP $(inherited)";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -741,6 +728,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = APPCLIP;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -751,7 +739,7 @@
 			};
 			name = Release;
 		};
-		607D39653093C380000DBFFD /* Debug configuration for PBXNativeTarget "AppActivityPoCWidgetExtension" */ = {
+		607D39653093C380000DBFFD /* Debug configuration for PBXNativeTarget "AppActivityPoCClipWidgetExtension" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -763,7 +751,7 @@
 				DEVELOPMENT_TEAM = H35GUXPUPQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppActivityPoCWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AppActivityPoCWidget;
+				INFOPLIST_KEY_CFBundleDisplayName = AppActivityPoCClipWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -788,7 +776,7 @@
 			};
 			name = Debug;
 		};
-		607D39663093C380000DBFFD /* Release configuration for PBXNativeTarget "AppActivityPoCWidgetExtension" */ = {
+		607D39663093C380000DBFFD /* Release configuration for PBXNativeTarget "AppActivityPoCClipWidgetExtension" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -800,7 +788,7 @@
 				DEVELOPMENT_TEAM = H35GUXPUPQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppActivityPoCWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AppActivityPoCWidget;
+				INFOPLIST_KEY_CFBundleDisplayName = AppActivityPoCClipWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -826,11 +814,9 @@
 			};
 			name = Release;
 		};
-		A1000000000000000000000C /* Debug configuration for PBXNativeTarget "AppActivityPoCAppWidgetExtension" */ = {
+		B0000000000000000000000B /* Debug configuration for PBXNativeTarget "AppActivityPoCAppWidgetExtension" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -838,64 +824,35 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppActivityPoCWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = AppActivityPoCWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = br.dev.mmddkk.appactivitypoc.LiveActivity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
-		A1000000000000000000000D /* Release configuration for PBXNativeTarget "AppActivityPoCAppWidgetExtension" */ = {
+		B0000000000000000000000C /* Release configuration for PBXNativeTarget "AppActivityPoCAppWidgetExtension" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "Apple Distribution";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H35GUXPUPQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppActivityPoCWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = AppActivityPoCWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = br.dev.mmddkk.appactivitypoc.LiveActivity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -926,19 +883,19 @@
 			);
 			defaultConfigurationName = Release;
 		};
-		607D39643093C380000DBFFD /* Build configuration list for PBXNativeTarget "AppActivityPoCWidgetExtension" */ = {
+		607D39643093C380000DBFFD /* Build configuration list for PBXNativeTarget "AppActivityPoCClipWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				607D39653093C380000DBFFD /* Debug configuration for PBXNativeTarget "AppActivityPoCWidgetExtension" */,
-				607D39663093C380000DBFFD /* Release configuration for PBXNativeTarget "AppActivityPoCWidgetExtension" */,
+				607D39653093C380000DBFFD /* Debug configuration for PBXNativeTarget "AppActivityPoCClipWidgetExtension" */,
+				607D39663093C380000DBFFD /* Release configuration for PBXNativeTarget "AppActivityPoCClipWidgetExtension" */,
 			);
 			defaultConfigurationName = Release;
 		};
-		A1000000000000000000000E /* Build configuration list for PBXNativeTarget "AppActivityPoCAppWidgetExtension" */ = {
+		B0000000000000000000000D /* Build configuration list for PBXNativeTarget "AppActivityPoCAppWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A1000000000000000000000C /* Debug configuration for PBXNativeTarget "AppActivityPoCAppWidgetExtension" */,
-				A1000000000000000000000D /* Release configuration for PBXNativeTarget "AppActivityPoCAppWidgetExtension" */,
+				B0000000000000000000000B /* Debug configuration for PBXNativeTarget "AppActivityPoCAppWidgetExtension" */,
+				B0000000000000000000000C /* Release configuration for PBXNativeTarget "AppActivityPoCAppWidgetExtension" */,
 			);
 			defaultConfigurationName = Release;
 		};
