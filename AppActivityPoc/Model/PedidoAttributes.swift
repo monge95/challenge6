@@ -14,9 +14,11 @@ enum StateRequest: Codable, Hashable {
     case entregue
 }
 
+
+/// Atributos da atividade
 struct PedidoAttributes: ActivityAttributes{
     
-    
+    /// Atributos dinámicos
     struct ContentState: Codable & Hashable{
         
         var state: StateRequest
@@ -27,6 +29,7 @@ struct PedidoAttributes: ActivityAttributes{
         
     }
     
+    /// Atributos estáticos, que não irão mudar
     let table: Int
     let orderTime: Date
     

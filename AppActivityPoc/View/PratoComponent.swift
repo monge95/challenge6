@@ -1,5 +1,7 @@
 import SwiftUI
 
+
+/// Componente do prato na ContentView
 struct PratoComponent: View {
     let nome: String
     let onAdicionar: () -> Void

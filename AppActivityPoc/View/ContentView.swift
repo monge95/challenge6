@@ -1,6 +1,8 @@
 import ActivityKit
 import SwiftUI
 
+
+/// Tela principal, que é utilizada pelo app principal e pelo app clip
 struct ContentView: View {
 
     @State var searchText: String = ""

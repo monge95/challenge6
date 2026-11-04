@@ -5,10 +5,12 @@
 //  Created by Pedro Monge Silveira on 03/11/26.
 //
 
-import SwiftUI
 import ActivityKit
 import Observation
+import SwiftUI
 
+
+/// Gerenciador da Live Activity
 @MainActor
 @Observable
 final class PedidoManager {
@@ -45,16 +47,20 @@ final class PedidoManager {
         }
     }
 
-    func atualizar(estado novoEstado: StateRequest, load novoLoad: Int,  left timer: String) async {
+    func atualizar(
+        estado novoEstado: StateRequest,
+        load novoLoad: Int,
+        left timer: String
+    ) async {
         guard let activity else { return }
-    
+
         let novo = PedidoAttributes.ContentState(
             state: novoEstado,
             time: activity.content.state.time,
             texRequest: textoDoEstado(novoEstado),
             load: novoLoad,
             left: timer
-            
+
         )
 
         await activity.update(ActivityContent(state: novo, staleDate: nil))

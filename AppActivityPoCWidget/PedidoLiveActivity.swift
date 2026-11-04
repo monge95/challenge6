@@ -8,6 +8,7 @@
 import SwiftUI
 import WidgetKit
 
+/// Visualização da Live Activity
 struct PedidoLiveActivity: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: PedidoAttributes.self) { context in

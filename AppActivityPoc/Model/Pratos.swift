@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Pratos
 enum Pratos: String, CaseIterable {
     case marmita = "Marmita"
     case carne_panela = "Carne de Panela"

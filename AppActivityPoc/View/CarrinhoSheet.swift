@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Sheet de carrinho
 struct CarrinhoSheet: View {
     
     @Environment(\.dismiss) private var dismiss

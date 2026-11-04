@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+/// Parte debaixo do componente de prato
 struct CutRoundedRectangle: Shape {
 
     var cornerRadius: CGFloat = 26.0

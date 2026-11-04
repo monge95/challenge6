@@ -6,6 +6,8 @@
 //
 import SwiftUI
 
+
+/// Componente de visualização da entrega
 struct ComponentLoad: View {
 
     let load: Int
