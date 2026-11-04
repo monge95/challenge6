@@ -28,7 +28,8 @@ final class PedidoManager {
             state: .preparando,
             time: Date().addingTimeInterval(300),
             texRequest: "Seu pedido está sendo preparado",
-            load: 1
+            load: 1,
+            left: "12"
         )
 
         do {
@@ -44,14 +45,16 @@ final class PedidoManager {
         }
     }
 
-    func atualizar(estado novoEstado: StateRequest, load novoLoad: Int) async {
+    func atualizar(estado novoEstado: StateRequest, load novoLoad: Int,  left timer: String) async {
         guard let activity else { return }
     
         let novo = PedidoAttributes.ContentState(
             state: novoEstado,
             time: activity.content.state.time,
             texRequest: textoDoEstado(novoEstado),
-            load: novoLoad
+            load: novoLoad,
+            left: timer
+            
         )
 
         await activity.update(ActivityContent(state: novo, staleDate: nil))
@@ -77,19 +80,19 @@ final class PedidoManager {
     private func iniciarProgresso() {
         progressTask?.cancel()
         progressTask = Task {
-            try? await Task.sleep(for: .seconds(5))
+            try? await Task.sleep(for: .seconds(10))
             guard !Task.isCancelled else { return }
-            await atualizar(estado: .aCaminho, load: 2)
+            await atualizar(estado: .aCaminho, load: 2, left: "8")
+
+            try? await Task.sleep(for: .seconds(10))
+            guard !Task.isCancelled else { return }
+            await atualizar(estado: .aCaminho, load: 3, left: "5")
+
+            try? await Task.sleep(for: .seconds(10))
+            guard !Task.isCancelled else { return }
+            await atualizar(estado: .entregue, load: 4, left: "chegou")
 
             try? await Task.sleep(for: .seconds(5))
-            guard !Task.isCancelled else { return }
-            await atualizar(estado: .aCaminho, load: 3)
-
-            try? await Task.sleep(for: .seconds(5))
-            guard !Task.isCancelled else { return }
-            await atualizar(estado: .entregue, load: 4)
-
-            try? await Task.sleep(for: .seconds(3))
             guard !Task.isCancelled else { return }
             await encerrar()
         }

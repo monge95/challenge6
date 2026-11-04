@@ -23,6 +23,7 @@ struct PedidoAttributes: ActivityAttributes{
         var time: Date
         var texRequest: String
         var load: Int
+        var left: String
         
     }
     

@@ -16,6 +16,7 @@ struct PedidoLiveActivity: Widget {
                 Text("Mesa \(context.attributes.table)")
                     .font(.headline)
                     .foregroundStyle(.primary)
+                
                 Text(textoDoEstado(context.state.state))
                 Text("Previsão de Entrega às \(context.state.time, style: .time)")
             }
@@ -25,22 +26,31 @@ struct PedidoLiveActivity: Widget {
         } dynamicIsland: { context in
             DynamicIsland{
                 DynamicIslandExpandedRegion(.leading) {
+                    GeometryReader{geo in
                         Text("Mesa \(context.attributes.table)")
-                        .padding(.leading, 10)
+                            .padding(.leading, geo.size.width * 0.1)
+                    }
                         
                   
                 }
-                DynamicIslandExpandedRegion(.trailing) {
-                    Text(context.state.time, style: .time)
-                }
                 DynamicIslandExpandedRegion(.bottom) {
-                    ComponentLoad(load: context.state.load)
-                        .padding(.horizontal, )
+                    ComponentLoad(load: context.state.load,left: context.state.left)
+                        .padding(.horizontal)
                 }
             } compactLeading: {
+                switch context.state.state {
+                case .aCaminho:
+                    Text("A caminho")
+                    
+                case .entregue:
+                    Text("chegou")
+                    
+                case .preparando:
+                    Text("preparando")
+                }
                 
             } compactTrailing: {
-                Text(context.state.time, style: .timer)
+              
             } minimal: {
                 Image(systemName: "fork.knife")
             }

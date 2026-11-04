@@ -15,17 +15,17 @@ import WidgetKit
         state: .preparando,
         time: .now.addingTimeInterval(1800),
         texRequest: "Preparando",
-        load: 1
+        load: 1, left: "20"
     )
     PedidoAttributes.ContentState(
         state: .aCaminho,
         time: .now.addingTimeInterval(900),
-        texRequest: "A caminho", load: 2
+        texRequest: "A caminho", load: 2, left: "3"
     )
     PedidoAttributes.ContentState(
         state: .entregue,
         time: .now,
-        texRequest: "Entregue", load: 4
+        texRequest: "Entregue", load: 4, left: "2"
     )
 }
 
@@ -39,18 +39,18 @@ import WidgetKit
     PedidoAttributes.ContentState(
         state: .preparando,
         time: .now.addingTimeInterval(1800),
-        texRequest: "Preparando", load: 1
+        texRequest: "Preparando", load: 1, left: "2"
         
     )
     PedidoAttributes.ContentState(
         state: .aCaminho,
         time: .now.addingTimeInterval(900),
-        texRequest: "A caminho", load: 2
+        texRequest: "A caminho", load: 2, left: "2"
     )
     PedidoAttributes.ContentState(
         state: .entregue,
         time: .now,
-        texRequest: "Entregue", load: 4
+        texRequest: "Entregue", load: 4, left: "2"
     )
 }
 
@@ -64,16 +64,16 @@ import WidgetKit
     PedidoAttributes.ContentState(
         state: .preparando,
         time: .now.addingTimeInterval(1800),
-        texRequest: "Preparando", load: 1
+        texRequest: "Preparando", load: 1, left: "2"
     )
     PedidoAttributes.ContentState(
         state: .aCaminho,
         time: .now.addingTimeInterval(900),
-        texRequest: "A caminho", load: 4
+        texRequest: "A caminho", load: 4, left: "2"
     )
     PedidoAttributes.ContentState(
         state: .entregue,
         time: .now,
-        texRequest: "Entregue", load: 4
+        texRequest: "Entregue", load: 4, left: "2"
     )
 }

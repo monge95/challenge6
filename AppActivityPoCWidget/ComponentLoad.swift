@@ -9,21 +9,39 @@ import SwiftUI
 struct ComponentLoad: View {
 
     let load: Int
+    var left: String = ""
     var total: Int = 4
     var spacing: CGFloat = 6
     var diameter: CGFloat = 10
-    var text: [String] = [
-        "confirmando", "preparando", "entregando", "entregue",
-    ]
+    var text: [String] = ["confirmando", "preparando", "entregando", "entregue"]
 
+    private var chegou: Bool {
+          load >= total || left.lowercased() == "chegou"
+      }
+
+      private var titulo: String {
+          if chegou { return "Seu pedido chegou" }
+          guard !left.isEmpty else { return "Seu pedido está sendo preparado" }
+          return "Seu pedido chega em \(left) min"
+      }
+    
     var body: some View {
         VStack(spacing: 8) {
+            
+          
+            Text(titulo)
+                .font(.headline)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.bottom, 10)
+            
             GeometryReader { geometry in
                 let stepCount = min(total, text.count)
                 let stepWidth = geometry.size.width / CGFloat(max(stepCount, 1))
                 let lineWidth = max(0, stepWidth - diameter)
-
-                ZStack(alignment: .topLeading) {
+                
+            
+          
+              ZStack(alignment: .bottomLeading) {
                     ForEach(0..<max(stepCount - 1, 0), id: \.self) { index in
                         let startX = CGFloat(index) * stepWidth + stepWidth / 2 + diameter / 2
                         let isConnected = load > index + 1
@@ -48,11 +66,12 @@ struct ComponentLoad: View {
                         }
                     }
                 }
+              
             }
             .frame(height: diameter)
             .animation(.easeInOut(duration: 0.4), value: load)
 
-            HStack(spacing: 0) {
+            HStack(spacing: 10) {
                 ForEach(Array(text.prefix(total).enumerated()), id: \.offset) { _, label in
                     Text(label)
                         .font(.system(size: 13))
