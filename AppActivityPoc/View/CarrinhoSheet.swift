@@ -14,7 +14,6 @@ struct CarrinhoSheet: View {
 
     @Binding var carrinho: [Pratos: Int]
 
-    @State var manager = PedidoManager()
     
     var mesaNumber: Int? = nil
 
@@ -62,23 +61,10 @@ struct CarrinhoSheet: View {
                     }
                 }
                 Button {
-                    manager.iniciarPedido(mesa: mesaNumber ?? 0)
+                    print("Pedido feito")
                 } label: {
                     Spacer()
                     Text("Fazer pedido")
-                    Spacer()
-                }
-                .padding()
-                .glassEffect(.regular.interactive())
-                .padding(.horizontal)
-                
-                Button {
-                    Task {
-                        await manager.encerrar()
-                    }
-                } label: {
-                    Spacer()
-                    Text("Remover pedido")
                     Spacer()
                 }
                 .padding()
