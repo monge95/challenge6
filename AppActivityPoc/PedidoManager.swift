@@ -18,7 +18,8 @@ final class PedidoManager {
 
     var load: Int = 0
     var estado: StateRequest = .preparando
-
+    ////////////////////////////////////////////
+    //comese por aqui
     func iniciarPedido(mesa: Int) {
         guard ActivityAuthorizationInfo().areActivitiesEnabled else { return }
 
@@ -37,13 +38,15 @@ final class PedidoManager {
                 attributes: atributos,
                 content: ActivityContent(state: estadoInicial, staleDate: nil)
             )
-            
+            //////////////////////////////////////////////////////////
+            // primeiro fassa essa funçao depois coloque ela aqui
             iniciarProgresso()
         } catch {
             print("Erro ao iniciar: \(error)")
         }
     }
-
+    ///////////////////////////////
+    //segundo passo
     func atualizar(estado novoEstado: StateRequest, load novoLoad: Int,  left timer: String) async {
 
         guard let activity else { return }
@@ -62,21 +65,23 @@ final class PedidoManager {
         self.estado = novoEstado
         self.load = novoLoad
     }
-
+    ////////////////////////////////////
+    // terceiro passo
     func encerrar() async {
         progressTask?.cancel()
         progressTask = nil
-
+        
         // The manager may not hold the Activity instance if it was recreated,
         // so end every live Pedido activity owned by this app.
         for pedidoActivity in Activity<PedidoAttributes>.activities {
             await pedidoActivity.end(nil, dismissalPolicy: .immediate)
         }
-
+        
         activity = nil
         load = 0
     }
-
+    /////////////////////////////////////
+    //ultimo e depois comesa a lincalas
     private func iniciarProgresso() {
         progressTask?.cancel()
         progressTask = Task {

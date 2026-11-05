@@ -18,7 +18,6 @@ struct PedidoAttributes: ActivityAttributes{
     
     
     struct ContentState: Codable & Hashable{
-        
         var state: StateRequest
         var time: Date
         var texRequest: String
