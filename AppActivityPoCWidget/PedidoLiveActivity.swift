@@ -10,6 +10,7 @@ import WidgetKit
 
 struct PedidoLiveActivity: Widget {
     var body: some WidgetConfiguration {
+        // quando o celular esta desligado
         ActivityConfiguration(for: PedidoAttributes.self) { context in
           
             VStack(alignment: .trailing, spacing: 8) {
@@ -23,7 +24,10 @@ struct PedidoLiveActivity: Widget {
             .padding()
             .activityBackgroundTint(Color(uiColor: .secondarySystemBackground))
             .activitySystemActionForegroundColor(Color.primary)
+            
+            //configuraçoes do celular ligago
         } dynamicIsland: { context in
+            // area maior com o celular aberto
             DynamicIsland{
                 DynamicIslandExpandedRegion(.leading) {
                     GeometryReader{geo in
@@ -37,6 +41,7 @@ struct PedidoLiveActivity: Widget {
                     ComponentLoad(load: context.state.load,left: context.state.left)
                         .padding(.horizontal)
                 }
+                //linha superior cabe so uma palavra e uma imgem pequena na direita
             } compactLeading: {
                 switch context.state.state {
                 case .aCaminho:
@@ -51,6 +56,7 @@ struct PedidoLiveActivity: Widget {
                 
             } compactTrailing: {
               
+                //bolinha a esquerda
             } minimal: {
                 Image(systemName: "fork.knife")
             }

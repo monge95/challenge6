@@ -37,8 +37,7 @@ final class PedidoManager {
                 attributes: atributos,
                 content: ActivityContent(state: estadoInicial, staleDate: nil)
             )
-            load = 1
-            estado = .preparando
+            
             iniciarProgresso()
         } catch {
             print("Erro ao iniciar: \(error)")
@@ -46,6 +45,7 @@ final class PedidoManager {
     }
 
     func atualizar(estado novoEstado: StateRequest, load novoLoad: Int,  left timer: String) async {
+
         guard let activity else { return }
     
         let novo = PedidoAttributes.ContentState(
