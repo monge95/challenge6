@@ -8,6 +8,7 @@
 import SwiftUI
 import ActivityKit
 
+/// enum estado do pedido
 enum StateRequest: Codable, Hashable {
     case preparando
     case aCaminho
@@ -35,7 +36,7 @@ struct PedidoAttributes: ActivityAttributes{
     
 }
 
-
+/// Função de pegar o estado e retornar um texto
 func textoDoEstado(_ estado: StateRequest) -> String {
     switch estado {
     case .preparando: return "Seu pedido está sendo preparado"

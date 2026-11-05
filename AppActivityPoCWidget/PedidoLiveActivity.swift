@@ -24,8 +24,10 @@ struct PedidoLiveActivity: Widget {
             .padding()
             .activityBackgroundTint(Color(uiColor: .secondarySystemBackground))
             .activitySystemActionForegroundColor(Color.primary)
+            
+            /// Visualização da Dynamic Island
         } dynamicIsland: { context in
-            DynamicIsland{
+            DynamicIsland {
                 DynamicIslandExpandedRegion(.leading) {
                     GeometryReader{geo in
                         Text("Mesa \(context.attributes.table)")
