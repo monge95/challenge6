@@ -15,7 +15,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607785493092889700CA325E"
+               BlueprintIdentifier = "607165B2309CF8CD003AA9E8"
                BuildableName = "AppActivityPocClip.app"
                ReferencedContainer = "container:AppActivityPoc.xcodeproj">
             </BuildableReference>
@@ -31,7 +31,7 @@
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
-      appClipInvocationURLString = "https://meurestaurante.com/mesa/7"
+      appClipInvocationURLString = "http://meurestaurante.com.br/mesa/7"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -45,7 +45,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607785493092889700CA325E"
+            BlueprintIdentifier = "607165B2309CF8CD003AA9E8"
             BuildableName = "AppActivityPocClip.app"
             ReferencedContainer = "container:AppActivityPoc.xcodeproj">
          </BuildableReference>
@@ -53,7 +53,7 @@
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
-      appClipInvocationURLString = "https://meurestaurante.com/mesa/7"
+      appClipInvocationURLString = "http://meurestaurante.com.br/mesa/7"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
@@ -62,7 +62,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607785493092889700CA325E"
+            BlueprintIdentifier = "607165B2309CF8CD003AA9E8"
             BuildableName = "AppActivityPocClip.app"
             ReferencedContainer = "container:AppActivityPoc.xcodeproj">
          </BuildableReference>

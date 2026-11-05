@@ -34,6 +34,8 @@ struct ContentView: View {
                     }
 
                     Spacer()
+                    
+                    #if APPCLIP
                     Button {
                             showCarrinho.toggle()
                     } label: {
@@ -44,6 +46,7 @@ struct ContentView: View {
                             .background(.quaternary, in: Circle())
                     }
                     .buttonStyle(.plain)
+                    #endif
                 }
 
                 HStack(spacing: 10) {

@@ -17,7 +17,7 @@ struct PratoComponent: View {
                             .foregroundStyle(.primary)
                             .lineLimit(2)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                        
+                        #if APPCLIP
                             Button(action: onAdicionar) {
                                 Image(systemName: "plus")
                                     .font(.headline.weight(.medium))
@@ -28,6 +28,7 @@ struct PratoComponent: View {
                             }
                             .buttonStyle(.plain)
                             .frame(minWidth: 44, minHeight: 44)
+                        #endif
                         
                     }
                     .padding(12)
